@@ -1,9 +1,9 @@
 #!/bin/bash
 
-USERID=$(id -u)
+set -euo pipefail
 
-if [ $USERID -ne 0 ]; then
-    echo "Please run this script with root user access"
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Please run this script with root user access" >&2
     exit 1
 fi
 
