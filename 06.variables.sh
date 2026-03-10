@@ -1,13 +1,15 @@
 #!/bin/bash
  
-start_time=$(date)    # This will store the current date and time in the variable start_time
+# Use epoch timestamps (seconds since 1970-01-01) for arithmetic.
+start_time=$(date +%s)    # Store current time in seconds since the epoch
 
 sleep 5
 
-end_time=$(date)    # This will store the current date and time in the variable end_time
+end_time=$(date +%s)      # Store current time in seconds since the epoch
 
 total_time=$((end_time - start_time))
 
-echo "script started at $start_time"
-echo "script ended at $end_time"
+# Print human-readable timestamps when desired
+echo "script started at $(date -d "@$start_time")"
+echo "script ended at $(date -d "@$end_time")"
 echo "total time taken: $total_time seconds"
