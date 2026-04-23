@@ -24,7 +24,7 @@ VALIDATE(){
     fi
 }
 
-for package in $@ # sudo sh 14-loops.sh nginx mysql nodejs
+for package in $@ # sudo sh colours1.sh nginx mysql nodejs
 do
     dnf list installed $package &>>$LOGS_FILE
     if [ $? -ne 0 ]; then
